@@ -66,7 +66,7 @@ input("\n PRESS ANY KEY")
 os.system(f'mode con: cols={WIDTH_CMD} lines={HEIGHT_CMD}')
 tr = threading.Thread(target=play,args=(out_audio,))
 tr.start()
-time.sleep(0.001)
+time.sleep(0.01)
 for i in res:
   time.sleep(1/framespersecond)
   stdout.write(i)
