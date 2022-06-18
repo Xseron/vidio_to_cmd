@@ -68,5 +68,5 @@ tr = threading.Thread(target=play,args=(out_audio,))
 tr.start()
 time.sleep(0.001)
 for i in res:
-  time.sleep(1/framespersecond-0.001)
+  time.sleep(1/framespersecond)
   stdout.write(i)
