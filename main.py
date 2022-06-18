@@ -19,7 +19,7 @@ except:
 
 config = dotenv_values("config.env")
 vidio = config['vidio']
-out_oudio = config['out_audio']
+out_audio = config['out_audio']
 
 vidcap = cv2.VideoCapture(vidio)
 my_clip = mp.VideoFileClip(vidio)
@@ -64,8 +64,9 @@ while success:
   count += 1
 input("\n PRESS ANY KEY")
 os.system(f'mode con: cols={WIDTH_CMD} lines={HEIGHT_CMD}')
-tr = threading.Thread(target=play,args=('./play.mp3',))
+tr = threading.Thread(target=play,args=(out_audio,))
 tr.start()
+time.sleep(0.001)
 for i in res:
   time.sleep(1/framespersecond-0.001)
   stdout.write(i)
